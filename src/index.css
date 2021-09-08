@@ -116,4 +116,27 @@ code {
   padding: 10px;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
+button, input {
+  margin: 2%;
+  border: 2px solid black;
+  border-radius: 28px;
+  box-shadow: 1px 1px 1px black;
+ 
+  
+}
+
+form {
+  position: relative;
+  display: flex;
+  min-width: 100px;
+}
