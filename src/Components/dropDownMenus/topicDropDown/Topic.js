@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loadSubredditsByTopic } from '../../../Features/topics/topicsSlice';
 
 function TopicDropDown () {
 
     const [select, setSelect] = useState('');
+    const dispatch = useDispatch();
 
     return (
-    <select onChange={(event) => setSelect(event.target.value)} id='topic' name='topic'>
+    <select onSubmit={dispatch(loadSubredditsByTopic(select))} onChange={(event) => setSelect(event.target.value)} id='topic' name='topic'>
         <option value='defaultValue'>Topic - No Selection</option>
         <option value='Missspelled'>Missspelled</option>
         <option value='NetflixEvents'>NetflixEvents</option>

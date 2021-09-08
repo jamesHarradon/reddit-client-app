@@ -10,10 +10,6 @@ export default function Posts() {
     const posts = useSelector(selectPosts);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(loadPostsByTerm())
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
 
     return (
         <div className='posts-container'>

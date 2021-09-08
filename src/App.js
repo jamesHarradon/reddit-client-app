@@ -6,18 +6,19 @@ import './index.css';
 import ToolBar from './Components/toolbar/ToolBar';
 import DropDownCountry from './Components/dropDownMenus/countryDropDown/Country';
 import TopicDropDown from './Components/dropDownMenus/topicDropDown/Topic'
-import React, { Component } from 'react';
+import React from 'react';
 
 
 function App() {
   return (
     <div className="App">
+      <div className='topbar'>
+        <ToolBar />
+        <TopicDropDown />
+      </div>
       <Topics />
       <Posts />
       <Trending />
-      <ToolBar />
-      <DropDownCountry />
-      <TopicDropDown />
     </div>
   );
 }

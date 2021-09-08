@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loadPostsByTerm } from '../../Features/posts/postsSlice';
 
 
 function ToolBar() {
     const [input, setInput] = useState('');
+    const dispatch = useDispatch();
+
+    const onChangeHandler = (e) => {
+        e.preventDefault();
+        setInput(e.target.value);
+    }
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        dispatch(loadPostsByTerm(input))
+    }
 
     return  (
-        <form onSubmit={() => console.log(input)} action="/" method="get">
+        <form id='searchbar' onSubmit={onSubmitHandler}>
             <label htmlFor="header-search">
                 <span className="visually-hidden">Reddit Posts</span>
             </label>
@@ -13,7 +26,7 @@ function ToolBar() {
                 type="text"
                 id="header-search"
                 placeholder="Enter a keyword"
-                onChange={(event) => setInput(event.target.value)}
+                onChange={(e) => onChangeHandler(e)}
                 name="s" 
             />
             <button type="submit">Search</button>

@@ -6,10 +6,6 @@ export function Topics() {
     const topics = useSelector(selectTopics);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(loadSubredditsByTopic());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
 
     return (
         <div className='posts-container'>

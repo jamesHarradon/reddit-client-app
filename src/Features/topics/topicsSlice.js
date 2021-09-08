@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const loadSubredditsByTopic = createAsyncThunk(
-    'topics/loadSubredditsByTopic', async () => {
-        const response = await fetch('https://www.reddit.com/search.json?q=cars&limit=12&type=sr%2Cuser');
+    'topics/loadSubredditsByTopic', async (topic) => {
+        const response = await fetch(`https://www.reddit.com/search.json?q=${topic}&limit=12&type=sr%2Cuser`);
         const json = await response.json();
         return json.data.children;
     }
