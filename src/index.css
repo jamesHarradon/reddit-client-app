@@ -62,10 +62,6 @@ code {
 
 }
 .trending-post {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  
   flex-basis: 20%;
   margin: 5px;
   background-color: rgb(255, 226, 198);
