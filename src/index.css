@@ -13,9 +13,24 @@ code {
     monospace;
 }
 
+/*Topics Section*/
+
+.topics {
+  background-color: rgb(223, 255, 219);
+  box-shadow: 4px 4px 4px lightgray;
+}
+
+.topics li {
+  list-style: none;
+}
+
+.topics-bottom {
+  padding: 0px;
+}
+
 /*Posts Section*/
 
-.posts-grid-container {
+.posts-grid-container, .topics-grid-container {
   display: grid;
   grid-gap: 20px;
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);

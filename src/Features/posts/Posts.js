@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { selectHasFailed, selectIsLoading, selectPosts, loadPosts } from "./postsSlice";
+import { selectHasFailed, selectIsLoading, selectPosts, loadPostsByTerm } from "./postsSlice";
 import arrow from '../../images/arrow.png';
 import bubble from '../../images/bubble.png';
 import { postedWhen } from "../../util/postedWhenFunc";
@@ -11,7 +11,7 @@ export default function Posts() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadPosts())
+        dispatch(loadPostsByTerm())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 

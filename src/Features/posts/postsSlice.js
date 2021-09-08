@@ -1,11 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const loadPosts = createAsyncThunk(
-    'posts/loadPosts', async () => {
+export const loadPostsByTerm = createAsyncThunk(
+    'posts/loadPostsByTerm', async () => {
         const response = await fetch('https://www.reddit.com/search.json?q=sports&limit=12');
         const json = await response.json();
-        console.log(response)
-        console.log(json)
         return json.data.children;
     }
 )
@@ -18,16 +16,16 @@ const postsSlice = createSlice({
         posts: []
     },
     extraReducers: {
-        [loadPosts.pending]: (state, action) => {
+        [loadPostsByTerm.pending]: (state, action) => {
             state.hasFailed = false;
             state.isLoading = true;
         },
-        [loadPosts.fulfilled]: (state, action) => {
+        [loadPostsByTerm.fulfilled]: (state, action) => {
             state.posts = action.payload;
             state.hasFailed = false;
             state.isLoading = false;
         },
-        [loadPosts.rejected]: (state, action) => {
+        [loadPostsByTerm.rejected]: (state, action) => {
             state.hasFailed = true;
             state.isLoading = false;
         }
