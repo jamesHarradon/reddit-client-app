@@ -17,12 +17,39 @@ code {
 
 .topbar {
   display: flex;
-  justify-content: center;
-  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 #searchbar {
-  margin-right: 40px;
+  height: 40px;
+}
+
+#topic-select {
+  height: 40px;
+}
+
+.app-name {
+  
+}
+
+.app-name h1 {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 4em;
+  position: relative;
+  bottom: 70px;
+  right: 8px;
+  z-index: 1;
+  text-shadow: 2px 2px 2px rgb(150, 150, 150);
+  transform: rotate(-3deg);
+}
+
+#logo {
+  position: relative;
+  top: 32px;
+  right: 45px;
+  z-index: -1;
 }
 
 /*Topics Section*/
@@ -89,7 +116,7 @@ code {
 .trending-flex-container {
   display: flex;
   justify-content: center;
-  
+  margin-bottom: 10px;
 
 }
 .trending-post {

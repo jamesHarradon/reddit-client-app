@@ -8,7 +8,7 @@ function TopicDropDown () {
     const dispatch = useDispatch();
 
     return (
-    <select onSubmit={dispatch(loadSubredditsByTopic(select))} onChange={(event) => setSelect(event.target.value)} id='topic' name='topic'>
+    <select onSubmit={dispatch(loadSubredditsByTopic(select))} onChange={(event) => setSelect(event.target.value)} id='topic-select' name='topic'>
         <option value='defaultValue'>Topic - No Selection</option>
         <option value='Missspelled'>Missspelled</option>
         <option value='NetflixEvents'>NetflixEvents</option>
