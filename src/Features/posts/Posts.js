@@ -13,7 +13,7 @@ export default function Posts() {
 
     return (
         <div className='posts-container'>
-        <h1>Posts</h1>
+        <h1>Search Results</h1>
             <div className='posts-grid-container'> 
             {posts.map((post) =>            
                 (
