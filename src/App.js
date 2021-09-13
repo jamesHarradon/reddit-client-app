@@ -34,11 +34,11 @@ function App() {
           <TopicDropDown />
         </div>
         <Switch>
-          <Route path='/topics' element={Topics} />
-          <Route path='/posts' element={<Posts input={input} />} />
-          <Route path='/comments' element={Comments} />
-            
-          
+          <Route path='/topics' component={Topics} />
+          <Route path='/posts'>
+           <Posts input={input} />
+          </Route>
+          <Route path='/comments' component={Comments} />
         </Switch>
         <Trending />
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPostsByTerm } from '../../Features/posts/postsSlice';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function ToolBar(props) {
@@ -18,15 +18,15 @@ function ToolBar(props) {
             return <button type="submit">Search</button>
         } else {
             return (
-                <Link to={`/posts`}>
-                    <button type='submit'>Search</button>
-                </Link>
+                <Link to='/posts'>
+                    <button type="submit">Search</button> 
+                </Link> 
             )
         }
     }
 
     return  (
-        <form id='searchbar' >
+        <form id='searchbar' onSubmit={onSubmitHandler} >
             <label htmlFor="header-search">
                 <span className="visually-hidden">Reddit Posts</span>
             </label>
@@ -39,6 +39,9 @@ function ToolBar(props) {
             />
             
             {btnRender()}
+            
+            
+
             
         </form>
     );
