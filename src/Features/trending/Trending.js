@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { selectHasFailed, selectIsLoading, selectTrending, loadTrending } from "./trendingSlice";
 import arrow from '../../images/arrow.png';
 import bubble from '../../images/bubble.png';
-import { postedWhen } from '../../util/postedWhenFunc'
+import { postedWhen } from '../../util/postedWhenFunc';
+import hot from '../../images/hot.png';
 
 
 
@@ -23,7 +24,7 @@ export default function Trending() {
 
 return (
     <div className='trending-container'>
-    <h1>Trending</h1>
+    <img id='hot' src={hot} alt='hot text'></img>
         <div className='trending-flex-container'> 
         {trendingData.map((post) =>            
             (

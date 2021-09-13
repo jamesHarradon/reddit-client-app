@@ -30,8 +30,10 @@ function App() {
             <img src={logoText} alt='reddit text' />
             <h1>Relaxed</h1>
           </div>
-          <ToolBar onChangeHandler={onChangeHandler} input={input} />
-          <TopicDropDown />
+          <div className='searches'>
+            <ToolBar onChangeHandler={onChangeHandler} input={input} />
+            <TopicDropDown />
+          </div>
         </div>
         <Switch>
           <Route path='/topics' component={Topics} />

@@ -20,7 +20,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  margin: 30px 0px;
 }
 
 #searchbar {
@@ -69,15 +69,18 @@ code {
   margin: 15px;
 }
 
+#topic-image {
+  width: 200px;
+  height: 200px;
+}
+
 .topics-bottom {
   padding: 0px;
 }
 
 /*Posts Section*/
 
-.disabled {
-  pointer-events: none;
-}
+
 
 .posts-grid-container, .topics-grid-container {
   display: grid;
@@ -110,6 +113,11 @@ code {
   margin: 15px;
 }
 
+#post-image {
+  width: 100px;
+  height: 100px;
+}
+
 .post li {
   list-style: none;
   padding: 10px;
@@ -118,6 +126,13 @@ code {
 
 
 /*Trending section*/
+
+#hot {
+  position: relative;
+  right: 480px;
+  top: 20px;
+  transform: rotate(-15deg);
+}
 
 .trending-flex-container {
   display: flex;

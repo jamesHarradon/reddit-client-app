@@ -4,6 +4,7 @@ export const loadPostsByTerm = createAsyncThunk(
     'posts/loadPostsByTerm', async (term) => {
         const response = await fetch(`https://www.reddit.com/search.json?q=${term}&limit=12`);
         const json = await response.json();
+        console.log(json)
         return json.data.children;
     }
 )
