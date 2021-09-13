@@ -16,10 +16,13 @@ export default function Posts(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    // const loadComments = (url) => {
+    //     dispatch(getComments(url))
+    // }
+
 
     return (
         <div className='posts-container'>
-        <h1>Search Results</h1>
             <div className='posts-grid-container'> 
             {posts.map((post) =>            
                 (
@@ -36,7 +39,11 @@ export default function Posts(props) {
                             </ul>
                             <h3 className='post-title'>{post.data.title}</h3>
                             <ul className='post-bottom'>
-                                <li><img src={bubble} alt='bubble'></img></li>
+                                <li><img 
+                                src={bubble} 
+                                alt='bubble'
+                                // onClick={() => loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`)}
+                                ></img></li>
                                 <li>{post.data.num_comments}</li>
                             </ul>
                         </div>

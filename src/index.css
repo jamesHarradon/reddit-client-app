@@ -171,13 +171,15 @@ code {
   width: 1px;
 }
 
+.btn {
+  text-decoration: none;
+}
+
 button, input {
   margin: 2%;
   border: 2px solid black;
   border-radius: 28px;
-  box-shadow: 1px 1px 1px black;
- 
-  
+  box-shadow: 1px 1px 1px black; 
 }
 
 form {

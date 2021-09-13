@@ -18,9 +18,9 @@ function ToolBar(props) {
             return <button type="submit">Search</button>
         } else {
             return (
-                <Link to='/posts'>
-                    <button type="submit">Search</button> 
-                </Link> 
+                
+                    <button type="submit"><Link to='/posts' className='btn'>Search</Link></button> 
+                
             )
         }
     }

@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadSubredditsByTopic } from '../../../Features/topics/topicsSlice';
+import { useHistory } from 'react-router-dom';
 
 
 function TopicDropDown () {
 
     const [select, setSelect] = useState('');
     const dispatch = useDispatch();
+    const history = useHistory();
     
 
-    const onSubmitHandler = (e) => {
+    const onChangeHandler = (e) => {
         e.preventDefault();
-        dispatch(loadSubredditsByTopic(select))
+        history.push('/topics');
+        setSelect(e.target.value)
     }
+
+    useEffect(() => {
+        dispatch(loadSubredditsByTopic(select))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[select])
 
     return (
         
-            <select onSubmit={onSubmitHandler} onChange={(event) => setSelect(event.target.value)} id='topic-select' name='topic'>
+            <select onChange={onChangeHandler} id='topic-select' name='topic'>
                 
                     <option value='defaultValue'>Topic - No Selection</option>  
                     <option value='Missspelled'>Missspelled</option>

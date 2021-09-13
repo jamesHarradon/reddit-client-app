@@ -40,6 +40,7 @@ function App() {
           </Route>
           <Route path='/comments' component={Comments} />
         </Switch>
+        
         <Trending />
       </div>
     </Router>
