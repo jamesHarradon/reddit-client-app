@@ -6,10 +6,15 @@ import bubble from '../../images/bubble.png';
 import { postedWhen } from "../../util/postedWhenFunc";
 import { Link } from "react-router-dom";
 
-export default function Posts() {
+export default function Posts(props) {
     
     const posts = useSelector(selectPosts);
     const dispatch = useDispatch();
+
+    useEffect (() => {
+        dispatch(loadPostsByTerm(props.input));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
 
     return (

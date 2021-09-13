@@ -8,13 +8,17 @@ export const loadPostsByTerm = createAsyncThunk(
     }
 )
 
+
+
 const postsSlice = createSlice({
     name: 'posts',
     initialState: {
         isLoading: false,
         hasFailed: false,
-        posts: []
+        posts: [],
+        
     },
+    
     extraReducers: {
         [loadPostsByTerm.pending]: (state, action) => {
             state.hasFailed = false;
