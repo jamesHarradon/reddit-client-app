@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -38,11 +39,12 @@ code {
   font-family: 'Londrina Outline', cursive;
   font-size: 4em;
   position: relative;
-  bottom: 70px;
+  bottom: 25px;
   right: 8px;
   z-index: 1;
   text-shadow: 2px 2px 2px rgb(150, 150, 150);
   transform: rotate(-3deg);
+  margin: 0;
 }
 
 #logo {
@@ -72,6 +74,10 @@ code {
 }
 
 /*Posts Section*/
+
+.disabled {
+  pointer-events: none;
+}
 
 .posts-grid-container, .topics-grid-container {
   display: grid;
@@ -116,7 +122,7 @@ code {
 .trending-flex-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
 }
 .trending-post {

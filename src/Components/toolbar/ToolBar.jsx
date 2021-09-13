@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPostsByTerm } from '../../Features/posts/postsSlice';
+import { Link, NavLink } from 'react-router-dom';
 
 
 function ToolBar() {
@@ -29,7 +30,12 @@ function ToolBar() {
                 onChange={(e) => onChangeHandler(e)}
                 name="s" 
             />
+            
+            
             <button type="submit">Search</button>
+            
+            
+            
         </form>);
 
 }

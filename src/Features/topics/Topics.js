@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { selectHasFailed, selectIsLoading, selectTopics, loadSubredditsByTopic } from "./topicsSlice";
 
-export function Topics() {
+export default function Topics() {
     const topics = useSelector(selectTopics);
     const dispatch = useDispatch();
 
