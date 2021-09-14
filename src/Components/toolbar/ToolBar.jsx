@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPostsByTerm } from '../../Features/posts/postsSlice';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-function ToolBar() {
-    const [input, setInput] = useState('');
+function ToolBar(props) {
     const dispatch = useDispatch();
-
-    const onChangeHandler = (e) => {
-        e.preventDefault();
-        setInput(e.target.value);
-    }
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        dispatch(loadPostsByTerm(input))
+        dispatch(loadPostsByTerm(props.input));
+    }
+
+
+    const btnRender = () => {
+        if(window.location.toString().includes('posts')) {
+            return <button type="submit">Search</button>
+        } else {
+            return (
+                
+                    <button type="submit"><Link to='/posts' className='btn'>Search</Link></button> 
+                
+            )
+        }
     }
 
     return  (
-        <form id='searchbar' onSubmit={onSubmitHandler}>
+        <form id='searchbar' onSubmit={onSubmitHandler} >
             <label htmlFor="header-search">
                 <span className="visually-hidden">Reddit Posts</span>
             </label>
@@ -27,16 +34,17 @@ function ToolBar() {
                 type="text"
                 id="header-search"
                 placeholder="Enter a keyword"
-                onChange={(e) => onChangeHandler(e)}
+                onChange={(e) => props.onChangeHandler(e)}
                 name="s" 
             />
             
-            
-            <button type="submit">Search</button>
-            
+            {btnRender()}
             
             
-        </form>);
+
+            
+        </form>
+    );
 
 }
 

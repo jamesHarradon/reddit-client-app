@@ -4,17 +4,22 @@ export const loadPostsByTerm = createAsyncThunk(
     'posts/loadPostsByTerm', async (term) => {
         const response = await fetch(`https://www.reddit.com/search.json?q=${term}&limit=12`);
         const json = await response.json();
+        console.log(json)
         return json.data.children;
     }
 )
+
+
 
 const postsSlice = createSlice({
     name: 'posts',
     initialState: {
         isLoading: false,
         hasFailed: false,
-        posts: []
+        posts: [],
+        
     },
+    
     extraReducers: {
         [loadPostsByTerm.pending]: (state, action) => {
             state.hasFailed = false;
