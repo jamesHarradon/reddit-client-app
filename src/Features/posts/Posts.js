@@ -5,11 +5,14 @@ import arrow from '../../images/arrow.png';
 import bubble from '../../images/bubble.png';
 import { postedWhen } from "../../util/postedWhenFunc";
 import { Link } from "react-router-dom";
+import { loadComments } from "../comments/commentsSlice";
 
 export default function Posts() {
     
     const posts = useSelector(selectPosts);
     const dispatch = useDispatch();
+
+
 
 
     return (
@@ -31,15 +34,19 @@ export default function Posts() {
                             </ul>
                             <h3 className='post-title'>{post.data.title}</h3>
                             <ul className='post-bottom'>
-                                <li><img src={bubble} alt='bubble'></img></li>
+                                <li><img src={bubble} alt='bubble'
+                                onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></li>
                                 <li>{post.data.num_comments}</li>
+                                
                             </ul>
                         </div>
                     //</Link>
                     
     
                 )
+                
             )}
+        
             </div>
         </div>
     )
