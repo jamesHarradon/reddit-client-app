@@ -6,7 +6,11 @@ import { loadComments } from "../comments/commentsSlice";
 import arrow from '../../images/arrow.png';
 import bubble from '../../images/bubble.png';
 import { postedWhen } from '../../util/postedWhenFunc';
+import { randomImage } from '../../util/defaultIcon';
 import hot from '../../images/hot.png';
+import redOne from '../../images/red-one.png';
+import redTwo from '../../images/red-two.png';
+import redThree from '../../images/red-three.png';
 
 
 
@@ -17,7 +21,15 @@ export default function Trending() {
     const hasFailed = useSelector(selectHasFailed);
     const dispatch = useDispatch();
 
-    // function to work out how long ago a post was posted.
+    let imgArr = [redOne, redTwo, redThree];
+
+    const selectImage = (img) => {
+        if (!img.includes('http') || !img) {
+            return randomImage(imgArr);
+        } else {
+            return img;
+        }
+    }
     
     useEffect(() => {
         dispatch(loadTrending())
@@ -40,7 +52,7 @@ return (
                         <li>{post.data.author}</li>
                         <li>{postedWhen(post.data.created)}</li>
                     </ul>
-                    <img src={post.data.thumbnail} alt='hot thumbnail'></img>
+                    <img id='hot-thumbnail' src={selectImage(post.data.thumbnail)} alt='hot thumbnail'></img>
                     <h3 className='trending-title'>{post.data.title}</h3>
                     <ul className='trending-bottom'>
                         <li><Link to='/comments'><img src={bubble} alt='bubble'

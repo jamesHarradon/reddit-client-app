@@ -27,6 +27,24 @@ code {
   border-bottom: 5px solid lightgray;
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-text {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 3em;
+  color: white;
+  margin-bottom: 0px;
+}
+
+#white-logo {
+  display: inline;
+  margin: 20px;
+}
+
 .searches {
   position: relative;
   display: flex;
@@ -53,7 +71,7 @@ code {
   bottom: 25px;
   right: 8px;
   z-index: 1;
-  text-shadow: 2px 2px 2px rgb(150, 150, 150);
+  
   transform: rotate(-3deg);
   margin: 0;
 }
@@ -82,6 +100,7 @@ code {
 .topics {
   background-color: rgb(223, 255, 219);
   box-shadow: 4px 4px 4px lightgray;
+  
  
 }
 
@@ -120,6 +139,7 @@ code {
   
   background-color: rgb(227, 255, 255);
   box-shadow: 4px 4px 4px lightgray;
+  
   
 }
 
@@ -160,7 +180,7 @@ code {
   right: 550px;
   top: 20px;
   transform: rotate(-15deg);
-  -webkit-filter: drop-shadow(2px 2px 4px rgba(255, 255, 255, 1))
+  -webkit-filter: drop-shadow(2px 2px 4px rgb(255, 255, 255))
 }
 
 .trending-flex-container {
@@ -178,6 +198,7 @@ code {
   box-shadow: 4px 4px 4px lightgray;
   padding: 0px 10px;
   border-radius: 20px;
+  
 }
 
 .trending-about {
@@ -202,11 +223,18 @@ code {
   display: flex;
   justify-content: center;
   padding: 0;
+  
+
 }
 
 .trending-post li {
   list-style: none;
   padding: 10px;
+}
+
+#hot-thumbnail {
+  width: 150px;
+  height: 150px;
 }
 
 .visually-hidden {
@@ -269,6 +297,8 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 30px 0px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-bottom: 5px solid lightgray;
   }
 }

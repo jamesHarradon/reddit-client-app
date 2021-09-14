@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Posts from './Features/posts/Posts';
 import Trending from './Features/trending/Trending';
 import Topics from './Features/topics/Topics';
+import Home from './Components/home/Home'
 import './App.css';
 import './index.css';
 import ToolBar from './Components/toolbar/ToolBar';
@@ -36,7 +37,9 @@ function App() {
           </div>
         </div>
         <div className='main'>
+          
           <Switch>
+            <Route path='/' exact component={Home} />
             <Route path='/topics' component={Topics} />
             <Route path='/posts'>
             <Posts input={input} />
