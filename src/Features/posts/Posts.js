@@ -48,6 +48,7 @@ export default function Posts(props) {
 
     return (
         <div className='posts-container'>
+          <h1 id='search-header'>Search Results</h1>
             <div className='posts-grid-container'> 
             {posts.map((post) =>            
                 (

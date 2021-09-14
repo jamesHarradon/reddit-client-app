@@ -33,7 +33,7 @@ code {
   align-items: center;
 }
 
-#home-text {
+#home-text, #search-header, #subreddit-header {
   font-family: 'Londrina Outline', cursive;
   font-size: 3em;
   color: white;
@@ -124,7 +124,6 @@ code {
 /*Posts Section*/
 
 
-
 .posts-grid-container, .topics-grid-container {
   width: 80%;
   margin: 0px auto;
@@ -177,7 +176,7 @@ code {
 
 #hot {
   position: relative;
-  right: 550px;
+  right: 520px;
   top: 20px;
   transform: rotate(-15deg);
   -webkit-filter: drop-shadow(2px 2px 4px rgb(255, 255, 255))
@@ -203,6 +202,7 @@ code {
 
 .trending-about {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 0;
   font-size: 0.6em;
@@ -216,7 +216,7 @@ code {
 }
 
 .trending-title {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .trending-bottom, .post-bottom {
@@ -264,24 +264,56 @@ form {
   min-width: 100px;
 }
 
-@media only screen and (max-width: 600px) {
-  .posts-grid-container, .topics-grid-container {
-    display: grid;
-    grid-gap: 20px;
-    grid-template: repeat(12, 1fr) / 1fr;
-    
-  }
-
+@media only screen and (max-width: 1200px) {
   .trending-flex-container {
     display: grid;
-    grid-template: repeat(5, 1fr)/ 1fr;
+    grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
     justify-content: center;
     margin-bottom: 30px;
   
   }
 
   #hot {
+    right:0px;
+    top: 20px;
+    transform: rotate(-15deg);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .posts-grid-container, .topics-grid-container {
+    grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .topbar {
+    flex-direction: column;
+  }
+
+  .searches {
     position: relative;
+    top: -15px;
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .posts-grid-container, .topics-grid-container {
+    grid-gap: 20px;
+    grid-template: repeat(12, 1fr) / 1fr;
+    
+  }
+
+  .trending-flex-container {
+    grid-template: repeat(3, 1fr)/ repeat(2, 1fr);
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+
+  #hot {
     right:0px;
     top: 20px;
     transform: rotate(-15deg);
@@ -292,13 +324,18 @@ form {
   }
 }
 
-@media only screen and (max-width: 550px) {
-  .topbar {
-    display: flex;
-    flex-direction: column;
+@media only screen and (max-width: 450px) {
+  
+  .trending-flex-container {
+    grid-template: repeat(6, 1fr)/ 1fr;
     justify-content: center;
     margin-bottom: 30px;
-    background-color: white;
-    border-bottom: 5px solid lightgray;
+  }
+  
+  #hot {
+    right:0px;
+    top: 20px;
+    transform: rotate(-15deg);
   }
 }
+
