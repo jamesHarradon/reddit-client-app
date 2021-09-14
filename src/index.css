@@ -1,11 +1,12 @@
 body {
-  width: 80%;
+  
   margin: 0px auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:rgb(141, 241, 191);
   
 }
 
@@ -17,10 +18,13 @@ code {
 /*Topbar section*/
 
 .topbar {
+  
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 30px 0px;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  background-color: white;
+  border-bottom: 5px solid lightgray;
 }
 
 .searches {
@@ -58,7 +62,19 @@ code {
   position: relative;
   top: 32px;
   right: 45px;
-  z-index: -1;
+  z-index: 1;
+}
+
+#reddit-text {
+  position: relative;
+  z-index: 2;
+}
+
+/*Main*/
+
+.main {
+  
+  
 }
 
 /*Topics Section*/
@@ -91,6 +107,8 @@ code {
 
 
 .posts-grid-container, .topics-grid-container {
+  width: 80%;
+  margin: 0px auto;
   display: grid;
   grid-gap: 20px;
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);
@@ -142,9 +160,12 @@ code {
   right: 550px;
   top: 20px;
   transform: rotate(-15deg);
+  -webkit-filter: drop-shadow(2px 2px 4px rgba(255, 255, 255, 1))
 }
 
 .trending-flex-container {
+  width: 80%;
+  margin: 0px auto;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;

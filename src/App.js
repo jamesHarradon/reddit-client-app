@@ -27,7 +27,7 @@ function App() {
         <div className='topbar'>
           <div className='app-name'>
             <img id='logo' src={logo} alt='reddit logo'/><br></br>
-            <img src={logoText} alt='reddit text' />
+            <img id='reddit-text' src={logoText} alt='reddit text' />
             <h1>Relaxed</h1>
           </div>
           <div className='searches'>
@@ -35,15 +35,16 @@ function App() {
             <TopicDropDown />
           </div>
         </div>
-        <Switch>
-          <Route path='/topics' component={Topics} />
-          <Route path='/posts'>
-           <Posts input={input} />
-          </Route>
-          <Route path='/comments' component={Comments} />
-        </Switch>
-        
-        <Trending />
+        <div className='main'>
+          <Switch>
+            <Route path='/topics' component={Topics} />
+            <Route path='/posts'>
+            <Posts input={input} />
+            </Route>
+            <Route path='/comments' component={Comments} />
+          </Switch>
+          <Trending />
+        </div>
       </div>
     </Router>
   );
