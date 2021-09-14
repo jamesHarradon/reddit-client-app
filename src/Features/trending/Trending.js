@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { selectHasFailed, selectIsLoading, selectTrending, loadTrending } from "./trendingSlice";
+import { loadComments } from "../comments/commentsSlice";
 import arrow from '../../images/arrow.png';
 import bubble from '../../images/bubble.png';
 import { postedWhen } from '../../util/postedWhenFunc';
@@ -41,7 +43,8 @@ return (
                     <img src={post.data.thumbnail} alt='hot thumbnail'></img>
                     <h3 className='trending-title'>{post.data.title}</h3>
                     <ul className='trending-bottom'>
-                        <li><img src={bubble} alt='bubble'></img></li>
+                        <li><Link to='/comments'><img src={bubble} alt='bubble'
+                        onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></Link></li>
                         <li>{post.data.num_comments}</li>
                     </ul>
                 </div>

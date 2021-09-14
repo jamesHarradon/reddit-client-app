@@ -66,6 +66,7 @@ code {
 .topics {
   background-color: rgb(223, 255, 219);
   box-shadow: 4px 4px 4px lightgray;
+ 
 }
 
 .topics li {
@@ -94,12 +95,14 @@ code {
   grid-gap: 20px;
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);
   
+  
 }
 
 .post {
   
   background-color: rgb(227, 255, 255);
   box-shadow: 4px 4px 4px lightgray;
+  
 }
 
 .post-rating {
@@ -136,7 +139,7 @@ code {
 
 #hot {
   position: relative;
-  right: 480px;
+  right: 550px;
   top: 20px;
   transform: rotate(-15deg);
 }
@@ -153,6 +156,7 @@ code {
   background-color: rgb(255, 226, 198);
   box-shadow: 4px 4px 4px lightgray;
   padding: 0px 10px;
+  border-radius: 20px;
 }
 
 .trending-about {
@@ -233,9 +237,13 @@ form {
     top: 20px;
     transform: rotate(-15deg);
   }
+
+  .post-title, .topics-description, .post-bottom, .topics-bottom {
+    font-size: 13px;
+  }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
   .topbar {
     display: flex;
     flex-direction: column;

@@ -5,11 +5,8 @@ import arrow from '../../images/arrow.png';
 import bubble from '../../images/bubble.png';
 import { postedWhen } from "../../util/postedWhenFunc";
 import { Link } from "react-router-dom";
-
 import { loadComments } from "../comments/commentsSlice";
-
 import { reduceText } from "../../util/reduceText";
-
 
 import { randomImage } from '../../util/defaultIcon';
 
@@ -30,7 +27,7 @@ export default function Posts(props) {
     let imgArr = [redOne, redTwo, redThree, redFour, redFive, redSix, redSeven, redEight];
 
     const selectImage = (img) => {
-        if (img === 'default' || !img) {
+        if (!img.includes('http') || !img) {
             return randomImage(imgArr);
         } else {
             return img;
@@ -70,8 +67,8 @@ export default function Posts(props) {
                             
                             <ul className='post-bottom'>
 
-                                <li><img src={bubble} alt='bubble'
-                                onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></li>
+                                <li><Link to='/comments'><img src={bubble} alt='bubble'
+                                onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></Link></li>
 
                                 <li>{post.data.num_comments}</li>
                                 

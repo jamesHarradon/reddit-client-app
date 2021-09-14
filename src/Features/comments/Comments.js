@@ -21,7 +21,7 @@ export default function Comments () {
                         </span>
                         <ul className='comment-body-created'>
                             <li>{comment.data.body}</li>
-                            <text>{postedWhen(comment.data.created)}</text>
+                            <li>{postedWhen(comment.data.created)}</li>
                         </ul>
       
                     </div>
