@@ -5,7 +5,11 @@ import arrow from '../../images/arrow.png';
 import bubble from '../../images/bubble.png';
 import { postedWhen } from "../../util/postedWhenFunc";
 import { Link } from "react-router-dom";
+
+import { loadComments } from "../comments/commentsSlice";
+
 import { reduceText } from "../../util/reduceText";
+
 
 import { randomImage } from '../../util/defaultIcon';
 
@@ -43,6 +47,8 @@ export default function Posts(props) {
     // }
 
 
+
+
     return (
         <div className='posts-container'>
             <div className='posts-grid-container'> 
@@ -63,19 +69,21 @@ export default function Posts(props) {
                             <h3 className='post-title'>{reduceText(post.data.title)}</h3>
                             
                             <ul className='post-bottom'>
-                                <li><img 
-                                src={bubble} 
-                                alt='bubble'
-                                // onClick={() => loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`)}
-                                ></img></li>
+
+                                <li><img src={bubble} alt='bubble'
+                                onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></li>
+
                                 <li>{post.data.num_comments}</li>
+                                
                             </ul>
                         </div>
                     //</Link>
                     
     
                 )
+                
             )}
+        
             </div>
         </div>
     )
