@@ -38,6 +38,7 @@ return (
                         <li>{post.data.author}</li>
                         <li>{postedWhen(post.data.created)}</li>
                     </ul>
+                    <img src={post.data.thumbnail} alt='hot thumbnail'></img>
                     <h3 className='trending-title'>{post.data.title}</h3>
                     <ul className='trending-bottom'>
                         <li><img src={bubble} alt='bubble'></img></li>
