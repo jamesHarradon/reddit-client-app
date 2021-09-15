@@ -10,23 +10,29 @@ import redSix from '../../images/red-six.png';
 import redSeven from '../../images/red-seven.png';
 import redEight from '../../images/red-eight.png';
 
+import { Link } from "react-router-dom";
+
+
+
 export default function Topic({ topic }) {
    
-
+    
     let imgArr = [redOne, redTwo, redThree, redFour, redFive, redSix, redSeven, redEight];
 
     return (
-        <div key={topic.data.id} className='topics'>
-            <h3 className='topics-title'>
-                <li>{topic.data.title}</li> 
-            </h3>
-            <div className='topics-description'>
-                <img id='topic-image' src={topic.data.icon_img  || randomImage(imgArr)} alt='topic icon'></img>
-                <p>{reduceText(topic.data.public_description)}</p>
+        <Link to={`/topicPage/${topic.data.display_name}`}>
+            <div key={topic.data.id} className='topics'>
+                <h3 className='topics-title'>
+                    <li>{topic.data.title}</li> 
+                </h3>
+                <div className='topics-description'>
+                    <img id='topic-image' src={topic.data.icon_img  || randomImage(imgArr)} alt='topic icon'></img>
+                    <p>{reduceText(topic.data.public_description)}</p>
+                </div>
+                <ul className='topics-bottom'>
+                    <li>{topic.data.subscribers} Subscribers</li>
+                </ul>
             </div>
-            <ul className='topics-bottom'>
-                <li>{topic.data.subscribers} Subscribers</li>
-            </ul>
-        </div>
+        </Link>
     )
 }

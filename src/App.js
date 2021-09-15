@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Posts from './Features/posts/Posts';
 import Trending from './Features/trending/Trending';
 import Topics from './Features/topics/Topics';
-import Home from './Components/home/Home'
+import Home from './Components/home/Home';
+import TopicPage from './Features/topicPage/TopicPage';
 import './App.css';
 import './index.css';
 import SearchBar from './Components/searchbar/SearchBar';
@@ -44,6 +45,7 @@ function App() {
             <Route path='/posts'>
             <Posts input={input} />
             </Route>
+            <Route path='/topicPage/:name' component={TopicPage} />
             <Route path='/comments' component={Comments} />
           </Switch>
           <Trending />

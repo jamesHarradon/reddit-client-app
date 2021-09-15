@@ -3,7 +3,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import trendingSlice from '../Features/trending/trendingSlice'
 import postsSlice from '../Features/posts/postsSlice';
 import topicsSlice from '../Features/topics/topicsSlice';
-import commentsSlice from '../Features/comments/commentsSlice'
+import commentsSlice from '../Features/comments/commentsSlice';
+import topicSlice from '../Features/topic/topicSlice';
 
 
 export default configureStore({
@@ -11,7 +12,7 @@ export default configureStore({
         trending: trendingSlice,
         posts: postsSlice,
         topics: topicsSlice,
-        comments: commentsSlice
-
+        comments: commentsSlice,
+        topic: topicSlice
     }
 })
