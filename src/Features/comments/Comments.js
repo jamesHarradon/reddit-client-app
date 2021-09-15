@@ -5,6 +5,7 @@ import { postedWhen } from "../../util/postedWhenFunc";
 import { Link } from "react-router-dom";
 import arrow from '../../images/arrow.png';
 import { reduceText } from "../../util/reduceText";
+import Post from "../post/Post";
 
 
 export default function Comments () {
@@ -16,24 +17,8 @@ export default function Comments () {
     return (
         <div className='post-comment-page-container'>
             <div className='post-c-container'>
-                {posts.map((post) =>            
-                    (
-                    <div key={post.data.id} className='post-comment'>
-                        <ul className='post-comment-rating'>
-                            <li><img id='arrow' src={arrow} alt='arrow'></img></li>
-                            <li>{post.data.score}</li> 
-                        </ul>
-                        <ul className='post-comment-about'>
-                            <li>{post.data.subreddit_name_prefixed}</li>
-                            <li>{post.data.author}</li>
-                            <li>{postedWhen(post.data.created)}</li>
-                        </ul>
-                        <img id='post-comment-image' src={post.data.thumbnail} alt='post thumbnail'></img>
-                        <h3 className='post-comment-title'>{reduceText(post.data.title)}</h3>                           
-                    </div> 
-                    )  
-                )}
-        </div>
+                {posts.map((post) => <Post post={post} />)}
+            </div>
             <div className='comments-container'>
                 <h1>Comments</h1>
                     <div className='comments-grid-container'>

@@ -6,7 +6,7 @@ import Home from './Components/home/Home'
 import './App.css';
 import './index.css';
 import SearchBar from './Components/searchbar/SearchBar';
-import TopicDropDown from './Components/dropDownMenus/topicDropDown/Topic';
+import TopicDropDown from './Components/dropDownMenus/topicDropDown/TopicDropDown';
 import Comments from './Features/comments/Comments';
 import logo from '../src/images/reddit-logo.png';
 import logoText from '../src/images/reddit-text.png';
