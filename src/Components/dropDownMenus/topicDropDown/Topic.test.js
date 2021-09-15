@@ -7,11 +7,8 @@ import { Provider } from 'react-redux';
 
 describe('SearchBar component', () => {
     test('It renders the posts component when a search is submitted', () => {
-        const { getByText, getByTestId, getAllByTestId } = render(<Provider store={store}><App /></Provider>);
-        const dropDown = getByTestId('topic-select');
-        fireEvent.change(dropDown, {target: {value: 1}});
-        const options = getAllByTestId('topics');
-        expect(options[1].selected).toBeTruthy();
+        const { getByText, getByTestId } = render(<Provider store={store}><App /></Provider>);
+        fireEvent.change(getByTestId('topic-select'), {target: {value: 1}});
         const topicHeading = getByText('Subreddits');
         expect(topicHeading).toBeInTheDocument();
     })
