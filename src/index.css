@@ -264,60 +264,46 @@ form {
 /* Comments Page */
 
 .post-comment-page-container {
-  background-color: darkgreen;
+  background-color: rgb(72, 185, 250);
   position: center;
 }
+
+.post-comment-page-container h1 {
+  color: #dbd7ff; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 52px; 
+  font-weight: 800; 
+  line-height: 72px; 
+  margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
+  text-decoration: underline;}
 
 .posts-c-container {
   background-color: rgb(132, 196, 255);
 }
 
-.post-comment {
-  background-color: rgb(132, 196, 255);
-}
-
-.post-comment-rating {
-  background-color: rgb(132, 196, 255);
-}
-
-.post-comment-about {
-  background-color: rgb(132, 196, 255);
-  text-align: center;
-}
-
-.posts-comment-image {
-}
-
-.post-comment-title {
-  background-color: rgb(132, 196, 255);
-  font-size: large;
-  font-weight: bold;
-  position: center;
-}
-
-.comments-container {
-
-}
-
-.comments-grid-container {
-
-
-}
-
 .comment {
-
+  padding: 2%;
+  box-shadow: 4px 4px 4px rgb(3, 80, 223);
 }
 
-.comment-author {
-
+.comment-author h3 {
+  text-decoration: underline;
+  color: #05002f;
+  font-family: 'Raleway',sans-serif; 
+  font-size: 20px; 
+  font-weight: 800; 
+  line-height: 30px; 
+  margin: 0 0 24px; 
 }
 
-.comment-body-create {
-
+.comment-body-created li {
+  list-style: none;
+  padding: 1%;
+  text-align: left;
+  font-size: 18px;
 }
-
-
-
 
 
 @media only screen and (max-width: 1200px) {
