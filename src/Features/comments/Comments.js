@@ -9,35 +9,30 @@ import { reduceText } from "../../util/reduceText";
 
 export default function Comments () {
 
+
     let comments = useSelector(selectComments);
     let posts = useSelector(selectMainPost);
-        
-    // alert(comments);
-    console.log(posts)
-    console.log(comments)
     
     return (
-        <div className='post-comment-container'>
-                    <div className='posts-container'>
-            <div className='posts-grid-container'> 
-            {posts.map((post) =>            
-                (
-                        <div key={post.data.id} className='post'>
-                            <ul className='post-rating'>
-                                <li><img id='arrow' src={arrow} alt='arrow'></img></li>
-                                <li>{post.data.score}</li> 
-                            </ul>
-                            <ul className='post-about'>
-                                <li>{post.data.subreddit_name_prefixed}</li>
-                                <li>{post.data.author}</li>
-                                <li>{postedWhen(post.data.created)}</li>
-                            </ul>
-                            {/* <img id='post-image' src={selectImage(post.data.thumbnail)} alt='post thumbnail'></img> */}
-                            <h3 className='post-title'>{reduceText(post.data.title)}</h3>                           
-                        </div> 
-                )  
-            )}
-            </div>
+        <div className='post-comment-page-container'>
+            <div className='post-c-container'>
+                {posts.map((post) =>            
+                    (
+                    <div key={post.data.id} className='post-comment'>
+                        <ul className='post-comment-rating'>
+                            <li><img id='arrow' src={arrow} alt='arrow'></img></li>
+                            <li>{post.data.score}</li> 
+                        </ul>
+                        <ul className='post-comment-about'>
+                            <li>{post.data.subreddit_name_prefixed}</li>
+                            <li>{post.data.author}</li>
+                            <li>{postedWhen(post.data.created)}</li>
+                        </ul>
+                        <img id='post-comment-image' src={post.data.thumbnail} alt='post thumbnail'></img>
+                        <h3 className='post-comment-title'>{reduceText(post.data.title)}</h3>                           
+                    </div> 
+                    )  
+                )}
         </div>
             <div className='comments-container'>
                 <h1>Comments</h1>
