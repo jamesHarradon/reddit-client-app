@@ -12,9 +12,6 @@ export default function Comments () {
 
     let comments = useSelector(selectComments);
     let posts = useSelector(selectMainPost);
-    const dispatch = useDispatch();
-
-
     
     return (
         <div className='post-comment-page-container'>

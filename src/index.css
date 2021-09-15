@@ -1,11 +1,12 @@
 body {
-  width: 80%;
+  
   margin: 0px auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:rgb(141, 241, 191);
   
 }
 
@@ -17,10 +18,31 @@ code {
 /*Topbar section*/
 
 .topbar {
+  
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 30px 0px;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  background-color: white;
+  border-bottom: 5px solid lightgray;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-text, #search-header, #subreddit-header {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 3em;
+  color: white;
+  margin-bottom: 0px;
+}
+
+#white-logo {
+  display: inline;
+  margin: 20px;
 }
 
 .searches {
@@ -49,7 +71,7 @@ code {
   bottom: 25px;
   right: 8px;
   z-index: 1;
-  text-shadow: 2px 2px 2px rgb(150, 150, 150);
+  
   transform: rotate(-3deg);
   margin: 0;
 }
@@ -58,7 +80,19 @@ code {
   position: relative;
   top: 32px;
   right: 45px;
-  z-index: -1;
+  z-index: 1;
+}
+
+#reddit-text {
+  position: relative;
+  z-index: 2;
+}
+
+/*Main*/
+
+.main {
+  
+  
 }
 
 /*Topics Section*/
@@ -66,6 +100,7 @@ code {
 .topics {
   background-color: rgb(223, 255, 219);
   box-shadow: 4px 4px 4px lightgray;
+  
  
 }
 
@@ -89,8 +124,9 @@ code {
 /*Posts Section*/
 
 
-
 .posts-grid-container, .topics-grid-container {
+  width: 80%;
+  margin: 0px auto;
   display: grid;
   grid-gap: 20px;
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);
@@ -102,6 +138,7 @@ code {
   
   background-color: rgb(227, 255, 255);
   box-shadow: 4px 4px 4px lightgray;
+  
   
 }
 
@@ -139,12 +176,15 @@ code {
 
 #hot {
   position: relative;
-  right: 550px;
+  right: 520px;
   top: 20px;
   transform: rotate(-15deg);
+  -webkit-filter: drop-shadow(2px 2px 4px rgb(255, 255, 255))
 }
 
 .trending-flex-container {
+  width: 80%;
+  margin: 0px auto;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
@@ -157,10 +197,12 @@ code {
   box-shadow: 4px 4px 4px lightgray;
   padding: 0px 10px;
   border-radius: 20px;
+  
 }
 
 .trending-about {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 0;
   font-size: 0.6em;
@@ -174,18 +216,25 @@ code {
 }
 
 .trending-title {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .trending-bottom, .post-bottom {
   display: flex;
   justify-content: center;
   padding: 0;
+  
+
 }
 
 .trending-post li {
   list-style: none;
   padding: 10px;
+}
+
+#hot-thumbnail {
+  width: 150px;
+  height: 150px;
 }
 
 .visually-hidden {
@@ -274,24 +323,58 @@ form {
 
 
 
-@media only screen and (max-width: 600px) {
-  .posts-grid-container, .topics-grid-container {
-    display: grid;
-    grid-gap: 20px;
-    grid-template: repeat(12, 1fr) / 1fr;
-    
-  }
 
+@media only screen and (max-width: 1200px) {
   .trending-flex-container {
     display: grid;
-    grid-template: repeat(5, 1fr)/ 1fr;
+    grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
     justify-content: center;
     margin-bottom: 30px;
   
   }
 
   #hot {
+    right:0px;
+    top: 20px;
+    transform: rotate(-15deg);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .posts-grid-container, .topics-grid-container {
+    grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .topbar {
+    flex-direction: column;
+  }
+
+  .searches {
     position: relative;
+    top: -15px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 600px) {
+  .posts-grid-container, .topics-grid-container {
+    grid-gap: 20px;
+    grid-template: repeat(12, 1fr) / 1fr;
+    
+  }
+
+  .trending-flex-container {
+    grid-template: repeat(3, 1fr)/ repeat(2, 1fr);
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+
+  #hot {
     right:0px;
     top: 20px;
     transform: rotate(-15deg);
@@ -302,11 +385,18 @@ form {
   }
 }
 
-@media only screen and (max-width: 550px) {
-  .topbar {
-    display: flex;
-    flex-direction: column;
+@media only screen and (max-width: 450px) {
+  
+  .trending-flex-container {
+    grid-template: repeat(6, 1fr)/ 1fr;
     justify-content: center;
-    margin: 30px 0px;
+    margin-bottom: 30px;
+  }
+  
+  #hot {
+    right:0px;
+    top: 20px;
+    transform: rotate(-15deg);
   }
 }
+

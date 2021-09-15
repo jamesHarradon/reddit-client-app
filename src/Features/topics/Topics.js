@@ -24,7 +24,7 @@ export default function Topics() {
 
     return (
         <div className='posts-container'>
-
+          <h1 id='subreddit-header'>Subreddits</h1>
             <div className='topics-grid-container'> 
             {topicsFiltered.map((topic) =>            
                 (

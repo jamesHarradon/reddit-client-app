@@ -2,8 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const loadTrending = createAsyncThunk(
     'trending/loadTrending', async () => {
-        const response = await fetch('https://www.reddit.com/hot.json?&limit=5');
+        const response = await fetch('https://www.reddit.com/hot.json?&limit=6');
         const json = await response.json();
+        console.log(json)
         return json.data.children;
     }
 )
