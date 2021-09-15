@@ -4,7 +4,7 @@ import { loadPostsByTerm } from '../../Features/posts/postsSlice';
 import { Link } from 'react-router-dom';
 
 
-function ToolBar(props) {
+function SearchBar(props) {
     const dispatch = useDispatch();
 
     const onSubmitHandler = (e) => {
@@ -49,5 +49,5 @@ function ToolBar(props) {
 }
 
 
-export default ToolBar;
+export default SearchBar;
 

@@ -24,20 +24,20 @@ function TopicDropDown () {
 
     return (
         
-            <select onChange={onChangeHandler} id='topic-select' name='topic'>
+            <select onChange={onChangeHandler} id='topic-select' data-testid='topic-select' name='topic'>
                 
-                    <option value='defaultValue'>Topic - No Selection</option>  
-                    <option value='Missspelled'>Missspelled</option>
-                    <option value='NetflixEvents'>NetflixEvents</option>
-                    <option value='foodobjects'>foodobjects</option>
-                    <option value='TheHolidays'>TheHolidays</option>
-                    <option value='Futurology'>Futurology</option>
-                    <option value='NatureIsFuckingLit'>NatureIsFuckingLit</option>
-                    <option value='Gifs'>Gifs</option>
-                    <option value='PhotoshopBattles'>PhotoshopBattles</option>
-                    <option value='MemeEconomy'>MemeEconomy</option>
-                    <option value='askscience'>askscience</option>
-                    <option value='Books'>Books</option>
+                    <option value='defaultValue' data-testid='topics'>Topic - No Selection</option>  
+                    <option value='Missspelled' data-testid='topics'>Missspelled</option>
+                    <option value='NetflixEvents' data-testid='topics'>NetflixEvents</option>
+                    <option value='foodobjects' data-testid='topics'>foodobjects</option>
+                    <option value='TheHolidays' data-testid='topics'>TheHolidays</option>
+                    <option value='Futurology' data-testid='topics'>Futurology</option>
+                    <option value='NatureIsFuckingLit' data-testid='topics'>NatureIsFuckingLit</option>
+                    <option value='Gifs' data-testid='topics'>Gifs</option>
+                    <option value='PhotoshopBattles' data-testid='topics'>PhotoshopBattles</option>
+                    <option value='MemeEconomy' data-testid='topics'>MemeEconomy</option>
+                    <option value='askscience' data-testid='topics'>askscience</option>
+                    <option value='Books' data-testid='topics'>Books</option>
                 
             </select> 
         

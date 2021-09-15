@@ -5,7 +5,7 @@ import Topics from './Features/topics/Topics';
 import Home from './Components/home/Home'
 import './App.css';
 import './index.css';
-import ToolBar from './Components/toolbar/ToolBar';
+import SearchBar from './Components/searchbar/SearchBar';
 import TopicDropDown from './Components/dropDownMenus/topicDropDown/Topic';
 import Comments from './Features/comments/Comments';
 import logo from '../src/images/reddit-logo.png';
@@ -32,7 +32,7 @@ function App() {
             <h1>Relaxed</h1>
           </div>
           <div className='searches'>
-            <ToolBar onChangeHandler={onChangeHandler} input={input} />
+            <SearchBar onChangeHandler={onChangeHandler} input={input} />
             <TopicDropDown />
           </div>
         </div>
