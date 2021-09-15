@@ -215,6 +215,65 @@ form {
   min-width: 100px;
 }
 
+
+/* Comments Page */
+
+.post-comment-page-container {
+  background-color: darkgreen;
+  position: center;
+}
+
+.posts-c-container {
+  background-color: rgb(132, 196, 255);
+}
+
+.post-comment {
+  background-color: rgb(132, 196, 255);
+}
+
+.post-comment-rating {
+  background-color: rgb(132, 196, 255);
+}
+
+.post-comment-about {
+  background-color: rgb(132, 196, 255);
+  text-align: center;
+}
+
+.posts-comment-image {
+}
+
+.post-comment-title {
+  background-color: rgb(132, 196, 255);
+  font-size: large;
+  font-weight: bold;
+  position: center;
+}
+
+.comments-container {
+
+}
+
+.comments-grid-container {
+
+
+}
+
+.comment {
+
+}
+
+.comment-author {
+
+}
+
+.comment-body-create {
+
+}
+
+
+
+
 @media only screen and (max-width: 600px) {
   .posts-grid-container, .topics-grid-container {
     display: grid;
