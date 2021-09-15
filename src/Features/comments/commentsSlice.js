@@ -4,9 +4,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const loadComments = createAsyncThunk(
     'comments/loadComments', async (url) => {
+        console.log(url);
         const response = await fetch(url);
         const json = await response.json();
-        return json[1].data.children;
+        console.log(json)
+        return json;
     }
 )
 
@@ -15,7 +17,8 @@ const commentsSlice = createSlice({
     initialState: {
         isLoading: false,
         hasFailed: false,
-        comments: []
+        comments: [],
+        mainPost: []
     },
     extraReducers: {
         [loadComments.pending]: (state, action) => {
@@ -23,7 +26,8 @@ const commentsSlice = createSlice({
             state.isLoading = true;
         },
         [loadComments.fulfilled]: (state, action) => {
-            state.comments = action.payload;
+            state.mainPost = action.payload[0]
+            state.comments = action.payload[1];
             state.hasFailed = false;
             state.isLoading = false;
         },
@@ -38,4 +42,5 @@ const commentsSlice = createSlice({
 export const selectIsLoading = (state) => state.comments.isLoading;
 export const selectHasFailed = (state) => state.comments.hasFailed;
 export const selectComments = (state) => state.comments.comments;
+export const selectMainPost = (state) => state.comments.mainPost;
 export default commentsSlice.reducer;
