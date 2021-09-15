@@ -10,12 +10,8 @@ import { reduceText } from "../../util/reduceText";
 export default function Comments () {
 
     let comments = useSelector(selectComments);
-    comments = comments.data.children;
     let posts = useSelector(selectMainPost);
-    posts = posts.data.children;
-    const dispatch = useDispatch();
-    
-    
+        
     // alert(comments);
     console.log(posts)
     console.log(comments)

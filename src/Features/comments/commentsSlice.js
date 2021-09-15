@@ -26,8 +26,8 @@ const commentsSlice = createSlice({
             state.isLoading = true;
         },
         [loadComments.fulfilled]: (state, action) => {
-            state.mainPost = action.payload[0]
-            state.comments = action.payload[1];
+            state.mainPost = action.payload[0].data.children;
+            state.comments = action.payload[1].data.children;
             state.hasFailed = false;
             state.isLoading = false;
         },
