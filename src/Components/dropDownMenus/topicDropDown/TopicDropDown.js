@@ -27,9 +27,9 @@ function TopicDropDown () {
             <select onChange={onChangeHandler} id='topic-select' data-testid='topic-select' name='topic'>
                 
                     <option value='defaultValue'>Topic - No Selection</option>  
-                    <option value='Missspelled'>Missspelled</option>
+                    <option value='Nonononoyes'>Nonononoyes</option>
                     <option value='NetflixEvents'>NetflixEvents</option>
-                    <option value='foodobjects'>foodobjects</option>
+                    <option value='Instant_regret'>Instant_regret</option>
                     <option value='TheHolidays'>TheHolidays</option>
                     <option value='Futurology'>Futurology</option>
                     <option value='NatureIsFuckingLit'>NatureIsFuckingLit</option>
