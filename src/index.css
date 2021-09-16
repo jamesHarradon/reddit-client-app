@@ -102,6 +102,7 @@ code {
   font-family: 'Rubik', sans-serif;
   background-color: rgb(223, 255, 219);
   box-shadow: 4px 4px 4px lightgray;
+  border-radius: 5px;
   
  
 }
@@ -119,6 +120,7 @@ code {
 #topic-image {
   width: 200px;
   height: 200px;
+  border-radius: 5px;
 }
 
 .topics-bottom {
@@ -142,6 +144,7 @@ code {
   font-family: 'Rubik', sans-serif;
   background-color: rgb(227, 255, 255);
   box-shadow: 4px 4px 4px lightgray;
+  border-radius: 5px;
   
   
 }
@@ -172,6 +175,7 @@ code {
 #post-image {
   width: 100px;
   height: 100px;
+  border-radius: 5px;
   
 }
 
@@ -220,10 +224,10 @@ code {
 .trending-flex-container .post {
   flex-basis: 20%;
   margin: 5px;
-  background-color: rgb(255, 226, 198);
+  background-color: rgb(255, 231, 220);
   box-shadow: 4px 4px 4px lightgray;
   padding: 0px 10px;
-  border-radius: 20px;
+  border-radius: 5px;
   
 }
 
@@ -258,6 +262,7 @@ code {
 .trending-flex-container #post-image {
   width: 150px;
   height: 150px;
+  border-radius: 5px;
 }
 
 .visually-hidden {
@@ -301,7 +306,49 @@ form {
 }
 
 .comments-grid-container {
+  width: 65%;
+  margin: 0px auto;
+  display: grid;
+  grid-gap: 20px;
   
+  
+}
+
+.comment {
+  font-family: 'Rubik', sans-serif;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 185);
+  box-shadow: 4px 4px 4px lightgray;
+  padding: 20px;
+  position: relative;
+}
+
+.comment-header {
+  
+
+}
+
+.comment-author {
+  
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px; 
+  font-weight: 800; 
+  margin: 0px 0px 10px 0px;
+  
+}
+
+.comment-image {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  left: 10px;
+  top: 10px;
+  
+}
+
+.comment-body {
+  padding: 10px;
 }
 
 .post-comment-page-container h1 {
@@ -315,6 +362,8 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
   
 }
 
@@ -331,20 +380,7 @@ form {
   font-size: 2em;
 }
 
-.comment {
-  font-family: 'Rubik', sans-serif;
-  
-  
-}
 
-.comment-author h3 {
-  font-family: 'Rubik', sans-serif;
-  text-decoration: underline;
-  font-size: 20px; 
-  font-weight: 800; 
-  
-  
-}
 
 .comment-body-created {
   padding: 0px;

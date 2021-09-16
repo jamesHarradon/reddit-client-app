@@ -6,9 +6,25 @@ import { Link } from "react-router-dom";
 import arrow from '../../images/arrow.png';
 import { reduceText } from "../../util/reduceText";
 import Post from "../post/Post";
+import { randomImage } from "../../util/defaultIcon";
+
+import redOne from '../../images/red-one.png';
+import redTwo from '../../images/red-two.png';
+import redThree from '../../images/red-three.png';
+import redFour from '../../images/red-four.png';
+import redFive from '../../images/red-five.png';
+import redSix from '../../images/red-six.png';
+import redSeven from '../../images/red-seven.png';
+import redEight from '../../images/red-eight.png';
 
 
 export default function Comments () {
+
+    let imgArr = [redOne, redTwo, redThree, redFour, redFive, redSix, redSeven, redEight];
+
+    const selectImage = (img) => {
+        return randomImage(imgArr);
+    }
 
 
     let comments = useSelector(selectComments);
@@ -22,16 +38,17 @@ export default function Comments () {
             <div className='comments-container'>
                 <h1>Comments</h1>
                     <div className='comments-grid-container'>
+                    
                     {comments.map((comment) => (
                         <div key={comment.data.id} className='comment'>
-                            <span className='comment-author'>
-                                <h3>{comment.data.author}</h3>
-                            </span>
+                            <div className='comment-header'>
+                                <img className='comment-image' src={selectImage(null)} alt='author'></img>
+                                <h3 className='comment-author'>{comment.data.author}</h3>
+                            </div>
                             <ul className='comment-body-created'>
-                                <li>{comment.data.body}</li>
+                                <li className='comment-body'>{comment.data.body}</li>
                                 <li>{postedWhen(comment.data.created)}</li>
                             </ul>
-        
                         </div>
                     ))}
                     </div>
