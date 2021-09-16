@@ -170,6 +170,23 @@ code {
   padding: 10px;
 }
 
+/*Subreddit section */
+
+.subreddit-header {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 3em;
+  color: white;
+  margin: 0px;
+  
+}
+
+.subreddit-prefixed {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 2em;
+  color: white;
+  margin-top: 0px;
+  
+}
 
 
 /*Trending section*/
