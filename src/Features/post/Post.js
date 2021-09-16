@@ -42,8 +42,12 @@ export default function Post({ post }) {
                 <li>{post.data.author}</li>
                 <li>{postedWhen(post.data.created)}</li>
             </ul>
-            <img id='post-image' src={selectImage(post.data.thumbnail)} alt='post thumbnail'></img>
-            <h3 className='post-title'>{reduceText(post.data.title)}</h3>
+            
+            <div className='post-main'>
+                <img id='post-image' src={selectImage(post.data.thumbnail)} alt='post thumbnail'></img>
+                <h3 className='post-title'>{reduceText(post.data.title)}</h3>
+            </div>
+            
             
             <ul className='post-bottom'>
 

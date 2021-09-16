@@ -4,9 +4,9 @@ export const reduceText = (text) => {
         //returns 40 characters if text has no spaces
         return text.split('').slice(0, 41).join('').concat('...')
     }
-    if (text.split(' ').length > 40) {
-        // returns 40 words if more than 40 words
-        return text.split(' ').slice(0, 41).join(' ').concat('...');
+    if (text.split(' ').length > 30) {
+        // returns 40 words if more than 30 words
+        return text.split(' ').slice(0, 31).join(' ').concat('...');
     } else {
         return text;
     }

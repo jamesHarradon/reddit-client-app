@@ -37,7 +37,7 @@ code {
   font-family: 'Londrina Outline', cursive;
   font-size: 3em;
   color: white;
-  margin-bottom: 0px;
+  
 }
 
 #white-logo {
@@ -57,6 +57,7 @@ code {
 }
 
 #topic-select {
+  font-family: 'Rubik', sans-serif;
   height: 40px;
 }
 
@@ -98,6 +99,7 @@ code {
 /*Topics Section*/
 
 .topics {
+  font-family: 'Rubik', sans-serif;
   background-color: rgb(223, 255, 219);
   box-shadow: 4px 4px 4px lightgray;
   
@@ -106,9 +108,11 @@ code {
 
 .topics li {
   list-style: none;
+  
 }
 
 .topics-description {
+  
   margin: 15px;
 }
 
@@ -135,7 +139,7 @@ code {
 }
 
 .post {
-  
+  font-family: 'Rubik', sans-serif;
   background-color: rgb(227, 255, 255);
   box-shadow: 4px 4px 4px lightgray;
   
@@ -156,13 +160,19 @@ code {
   
 }
 
+.post-main {
+  
+}
+
 .post-title {
   margin: 15px;
+  text-align: justify;
 }
 
 #post-image {
   width: 100px;
   height: 100px;
+  
 }
 
 .post li {
@@ -262,9 +272,11 @@ code {
 
 .btn {
   text-decoration: none;
+  
 }
 
 button, input {
+  font-family: 'Rubik', sans-serif;
   margin: 2%;
   border: 2px solid black;
   border-radius: 28px;
@@ -272,6 +284,7 @@ button, input {
 }
 
 form {
+  
   position: relative;
   display: flex;
   min-width: 100px;
@@ -281,44 +294,65 @@ form {
 /* Comments Page */
 
 .post-comment-page-container {
-  background-color: rgb(72, 185, 250);
-  position: center;
+  width: 80%;
+  margin: 0px auto;
+  margin-bottom: 30px;
+  
+}
+
+.comments-grid-container {
+  
 }
 
 .post-comment-page-container h1 {
-  color: #dbd7ff; 
-  font-family: 'Raleway',sans-serif; 
-  font-size: 52px; 
-  font-weight: 800; 
-  line-height: 72px; 
-  margin: 0 0 24px; 
-  text-align: center; 
-  text-transform: uppercase;
-  text-decoration: underline;}
+  font-family: 'Londrina Outline', cursive;
+  font-size: 3em;
+  color: white;
+  margin-top: 0px;
+}
 
-.posts-c-container {
-  background-color: rgb(132, 196, 255);
+.post-c-container .post-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.post-c-container #post-image {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+
+}
+
+.post-c-container .post-title {
+  text-align: center;
+  font-size: 2em;
 }
 
 .comment {
-  padding: 2%;
-  box-shadow: 4px 4px 4px rgb(3, 80, 223);
+  font-family: 'Rubik', sans-serif;
+  
+  
 }
 
 .comment-author h3 {
+  font-family: 'Rubik', sans-serif;
   text-decoration: underline;
-  color: #05002f;
-  font-family: 'Raleway',sans-serif; 
   font-size: 20px; 
   font-weight: 800; 
-  line-height: 30px; 
-  margin: 0 0 24px; 
+  
+  
+}
+
+.comment-body-created {
+  padding: 0px;
+  margin: 0px;
 }
 
 .comment-body-created li {
   list-style: none;
-  padding: 1%;
-  text-align: left;
   font-size: 18px;
 }
 
