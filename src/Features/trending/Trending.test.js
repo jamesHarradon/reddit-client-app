@@ -1,5 +1,7 @@
 import reducer from '../trending/trendingSlice';
 
+
+
 describe('Trending component', () => {
     test('Should return initial state', () => {
         expect(reducer(undefined, {})).toEqual({
@@ -9,3 +11,6 @@ describe('Trending component', () => {
         })
     })
 })
+
+
+
