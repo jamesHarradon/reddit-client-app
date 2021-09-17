@@ -32,11 +32,12 @@ export default function Comments () {
     
     return (
         <div className='post-comment-page-container'>
+            <h1>Comments</h1>
             <div className='post-c-container'>
                 {posts.map((post) => <Post post={post} />)}
             </div>
             <div className='comments-container'>
-                <h1>Comments</h1>
+                
                     <div className='comments-grid-container'>
                     
                     {comments.map((comment) => (

@@ -33,10 +33,7 @@ export default function Post({ post }) {
 
     return (
         <div key={post.data.id} className='post'>
-            <ul className='post-rating'>
-                <li><img id='arrow' src={arrow} alt='arrow'></img></li>
-                <li>{post.data.score}</li> 
-            </ul>
+            
             <ul className='post-about'>
                 <li>{post.data.subreddit_name_prefixed}</li>
                 <li>{post.data.author}</li>
@@ -50,11 +47,16 @@ export default function Post({ post }) {
             
             
             <ul className='post-bottom'>
+                <div className='post-bottom-left'>
+                    <li className='post-rating'><img id='arrow' src={arrow} alt='arrow'></img></li>
+                    <li>{post.data.score}</li> 
+                </div>
 
-                <li><Link to='/comments'><img src={bubble} alt='bubble'
-                onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></Link></li>
-
-                <li>{post.data.num_comments}</li>
+                <div className='post-bottom-right'>
+                    <li><Link to='/comments'><img src={bubble} alt='bubble'
+                    onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></Link></li>
+                    <li>{post.data.num_comments}</li>
+                </div>
                 
             </ul>
         </div>

@@ -99,6 +99,7 @@ code {
 /*Topics Section*/
 
 .topics {
+  
   font-family: 'Rubik', sans-serif;
   background-color: rgb(223, 255, 219);
   box-shadow: 4px 4px 4px lightgray;
@@ -141,10 +142,14 @@ code {
 }
 
 .post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: 'Rubik', sans-serif;
   background-color: rgb(227, 255, 255);
   box-shadow: 4px 4px 4px lightgray;
   border-radius: 5px;
+  
   
   
 }
@@ -179,6 +184,19 @@ code {
   
 }
 
+.post-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.post-bottom-left, .post-bottom-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .post li {
   list-style: none;
   padding: 10px;
@@ -206,17 +224,18 @@ code {
 /*Trending section*/
 
 #hot {
-  position: relative;
-  right: 520px;
+  right:0px;
   top: 20px;
   transform: rotate(-15deg);
+  position: relative;
   -webkit-filter: drop-shadow(2px 2px 4px rgb(255, 255, 255))
 }
 
 .trending-flex-container {
   width: 80%;
   margin: 0px auto;
-  display: flex;
+  display: grid;
+  grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
   justify-content: center;
   margin-bottom: 30px;
 
@@ -250,13 +269,7 @@ code {
   font-size: 0.8em;
 }
 
-.post-bottom {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  
 
-}
 
 
 .trending-flex-container #post-image {
@@ -306,7 +319,7 @@ form {
 }
 
 .comments-grid-container {
-  width: 65%;
+  max-width: 65%;
   margin: 0px auto;
   display: grid;
   grid-gap: 20px;
@@ -367,6 +380,10 @@ form {
   margin-top: 0px;
 }
 
+.post-c-container .post {
+  margin-bottom: 20px;
+}
+
 .post-c-container .post-main {
   display: flex;
   justify-content: center;
@@ -405,22 +422,6 @@ form {
   font-size: 18px;
 }
 
-
-@media only screen and (max-width: 1200px) {
-  .trending-flex-container {
-    display: grid;
-    grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
-    justify-content: center;
-    margin-bottom: 30px;
-  
-  }
-
-  #hot {
-    right:0px;
-    top: 20px;
-    transform: rotate(-15deg);
-  }
-}
 
 @media only screen and (max-width: 900px) {
   .posts-grid-container, .topics-grid-container {
