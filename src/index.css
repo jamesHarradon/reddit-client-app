@@ -324,7 +324,11 @@ form {
 }
 
 .comment-header {
-  
+  display: flex;  
+  justify-content:left;
+  align-items: center;
+
+
 
 }
 
@@ -333,8 +337,13 @@ form {
   font-family: 'Rubik', sans-serif;
   font-size: 20px; 
   font-weight: 800; 
-  margin: 0px 0px 10px 0px;
+  margin: 0px 10px 10px 50px;
   
+}
+
+.comment-posted {
+  margin: 0px 0px 10px 0px;
+  color: grey;
 }
 
 .comment-image {

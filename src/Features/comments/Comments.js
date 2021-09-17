@@ -41,13 +41,14 @@ export default function Comments () {
                     
                     {comments.map((comment) => (
                         <div key={comment.data.id} className='comment'>
+                            <img className='comment-image' src={selectImage(null)} alt='author'></img>
                             <div className='comment-header'>
-                                <img className='comment-image' src={selectImage(null)} alt='author'></img>
                                 <h3 className='comment-author'>{comment.data.author}</h3>
+                                <p className='comment-posted'>{postedWhen(comment.data.created)}</p>
                             </div>
                             <ul className='comment-body-created'>
                                 <li className='comment-body'>{comment.data.body}</li>
-                                <li>{postedWhen(comment.data.created)}</li>
+                                
                             </ul>
                         </div>
                     ))}
