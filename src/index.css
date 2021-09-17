@@ -376,6 +376,10 @@ form {
   
 }
 
+.post-c-container .post-main .post-title {
+  text-align: justify;
+}
+
 
 .post-c-container #post-image {
   width: 150px;
