@@ -23,13 +23,20 @@ export default function Post({ post }) {
 
     let imgArr = [redOne, redTwo, redThree, redFour, redFive, redSix, redSeven, redEight];
 
-    const selectImage = (img) => {
-        if (!img.includes('http') || !img) {
-            return randomImage(imgArr);
+
+    const imageOrVideo = (source) => {
+        if (source.secure_media) {
+            return <video controls='controls' id='post-video' width='320' height='240' autoPlay='true' loop='true' type='video/mp4' src={post.data.secure_media.reddit_video.fallback_url}></video>;
+        } else if (source.url_overridden_by_dest && source.url_overridden_by_dest.includes('.jpg') ) {
+            return <img id='post-image' alt='preview' height='auto' width='50%' src={source.url_overridden_by_dest}></img> 
+        } else if (source.thumbnail) {
+            return <img id='post-image' alt='preview' height='auto' width='auto' src={source.thumbnail}></img> 
         } else {
-            return img;
+            return <img id='post-image' alt='preview' height='200' width='200' src={randomImage(imgArr)}></img> 
         }
     }
+
+     
 
     return (
         <div key={post.data.id} className='post'>
@@ -41,7 +48,8 @@ export default function Post({ post }) {
             </ul>
             
             <div className='post-main'>
-                <img id='post-image' src={selectImage(post.data.thumbnail)} alt='post thumbnail'></img>
+                {imageOrVideo(post.data)}
+                
                 <h3 className='post-title'>{reduceText(post.data.title)}</h3>
             </div>
             
