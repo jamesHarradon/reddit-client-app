@@ -195,6 +195,7 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .post li {
