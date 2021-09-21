@@ -9,9 +9,6 @@ import redFive from '../../images/red-five.png';
 import redSix from '../../images/red-six.png';
 import redSeven from '../../images/red-seven.png';
 import redEight from '../../images/red-eight.png';
-import { useDispatch } from "react-redux";
-import { loadTopic } from "./topicSlice";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 
 
@@ -20,7 +17,6 @@ export default function Topic({ topic }) {
    
     let imgArr = [redOne, redTwo, redThree, redFour, redFive, redSix, redSeven, redEight];
 
-    const dispatch = useDispatch();
     const history = useHistory();
 
     const onClickHandler = (subreddit) => {

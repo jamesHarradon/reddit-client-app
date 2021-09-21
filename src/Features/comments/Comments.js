@@ -1,10 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { selectHasFailed, selectIsLoading, selectComments, loadCommentsByTerm, selectMainPost } from "./commentsSlice";
+import { useSelector } from "react-redux";
+
+import { selectComments, selectMainPost } from "./commentsSlice";
 import { postedWhen } from "../../util/postedWhenFunc";
-import { Link } from "react-router-dom";
-import arrow from '../../images/arrow.png';
-import { reduceText } from "../../util/reduceText";
 import Post from "../post/Post";
 import { randomImage } from "../../util/defaultIcon";
 

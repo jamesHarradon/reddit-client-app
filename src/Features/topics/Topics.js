@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectHasFailed, selectIsLoading, selectTopics, loadSubredditsByTopic } from "./topicsSlice";
+import { selectTopics } from "./topicsSlice";
 import Topic from "../topic/Topic";
 
 export default function Topics() {

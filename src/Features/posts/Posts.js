@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { selectHasFailed, selectIsLoading, selectPosts, loadPostsByTerm } from "./postsSlice";
+import { selectPosts, loadPostsByTerm } from "./postsSlice";
 
 import Post from "../post/Post";
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPostsByTerm } from '../../Features/posts/postsSlice';
 import { Link } from 'react-router-dom';
