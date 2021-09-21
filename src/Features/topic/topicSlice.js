@@ -5,7 +5,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const loadTopic = createAsyncThunk('topic/loadTopic', async (subredditName) => {
     const response = await fetch(`https://www.reddit.com/r/${subredditName}.json?limit=12`);
     const json = await response.json();
-    console.log(json.data.children);
     return json.data.children;
 
 })

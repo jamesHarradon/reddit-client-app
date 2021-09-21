@@ -16,9 +16,9 @@ export default function Trending() {
 
 return (
     <div className='trending-container'>
-    <img id='hot' src={hot} alt='hot text'></img>
+        <img id='hot' src={hot} alt='hot text'></img>
         <div className='trending-flex-container'> 
-        {trendingData.map((post) => <Post post={post} /> )}
+            {trendingData.map((post) => <Post key={post.data.id} post={post} /> )}
         </div>
     </div>
 )

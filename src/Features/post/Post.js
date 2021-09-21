@@ -46,19 +46,19 @@ export default function Post({ post }) {
             </div>
             
             
-            <ul className='post-bottom'>
-                <div className='post-bottom-left'>
+            <div className='post-bottom'>
+                <ul className='post-bottom-left'>
                     <li className='post-rating'><img id='arrow' src={arrow} alt='arrow'></img></li>
                     <li>{post.data.score}</li> 
-                </div>
+                </ul>
 
-                <div className='post-bottom-right'>
+                <ul className='post-bottom-right'>
                     <li><Link to='/comments'><img src={bubble} alt='bubble'
                     onClick={()=> dispatch(loadComments(`https://www.reddit.com/${post.data.subreddit_name_prefixed}/comments/${post.data.id}.json`))}></img></Link></li>
                     <li>{post.data.num_comments}</li>
-                </div>
+                </ul>
                 
-            </ul>
+            </div>
         </div>
     )
 }

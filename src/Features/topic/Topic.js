@@ -28,7 +28,7 @@ export default function Topic({ topic }) {
         
             <div key={topic.data.id} className='topics' onClick={() => onClickHandler(topic.data.display_name)}>
                 <h3 className='topics-title'>
-                    <li>{topic.data.title}</li> 
+                    {topic.data.title} 
                 </h3>
                 <div className='topics-description'>
                     <img id='topic-image' src={topic.data.icon_img  || randomImage(imgArr)} alt='topic icon'></img>

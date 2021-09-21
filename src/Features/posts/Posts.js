@@ -19,7 +19,7 @@ export default function Posts(props) {
         <div className='posts-container'>
           <h1 id='search-header'>Search Results</h1>
             <div className='posts-grid-container'> 
-                {posts.map((post) => <Post post={post} /> )}
+                {posts.map((post) => <Post key={post.data.id} post={post} /> )}
             </div>
         </div>
     )
