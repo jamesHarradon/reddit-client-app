@@ -44,10 +44,9 @@ export default function Comments () {
                                 <h3 className='comment-author'>{comment.data.author}</h3>
                                 <p className='comment-posted'>{postedWhen(comment.data.created)}</p>
                             </div>
-                            <ul className='comment-body-created'>
-                                <li className='comment-body'>{comment.data.body}</li>
-                                
-                            </ul>
+                            <p className='comment-body'>
+                                {comment.data.body}
+                            </p>
                         </div>
                     ))}
                     </div>

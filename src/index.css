@@ -175,6 +175,7 @@ code {
 .post-title {
   margin: 15px;
   text-align: justify;
+   
 }
 
 #post-image {
@@ -341,7 +342,7 @@ form {
   display: flex;  
   justify-content:left;
   align-items: center;
-
+  padding-bottom: 10px;
 
 
 }
@@ -349,7 +350,7 @@ form {
 .comment-author {
   
   font-family: 'Rubik', sans-serif;
-  font-size: 20px; 
+  font-size: 1.8vw;
   font-weight: 800; 
   margin: 0px 10px 10px 50px;
   
@@ -358,12 +359,13 @@ form {
 .comment-posted {
   margin: 0px 0px 10px 0px;
   color: grey;
+  font-size: 1.5vw;
 }
 
 .comment-image {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 8%;
+  height: auto;
   border-radius: 5px;
   left: 10px;
   top: 10px;
@@ -371,7 +373,10 @@ form {
 }
 
 .comment-body {
-  padding: 10px;
+  list-style: none;
+  font-size: 1.5vw;
+  padding: 0px;
+  margin: 0px;
 }
 
 .post-comment-page-container h1 {
@@ -396,12 +401,14 @@ form {
 
 .post-c-container .post-main .post-title {
   text-align: justify;
+  font-size: 2.5vw;
+  
 }
 
 
 .post-c-container #post-image {
-  width: 150px;
-  height: 150px;
+  width: 20%;
+  height: auto;
   margin: 20px;
 
 }
@@ -413,15 +420,6 @@ form {
 
 
 
-.comment-body-created {
-  padding: 0px;
-  margin: 0px;
-}
-
-.comment-body-created li {
-  list-style: none;
-  font-size: 18px;
-}
 
 
 @media only screen and (max-width: 900px) {
@@ -440,6 +438,15 @@ form {
     position: relative;
     top: -15px;
   }
+
+  .post-c-container .post-main .post-title {
+    text-align: justify;
+    font-size: 3vw;
+  }
+
+  .comment-body {
+    font-size: 1.8vw;
+  }
   
 }
 
@@ -456,6 +463,8 @@ form {
     justify-content: center;
     margin-bottom: 30px;
   }
+
+  
 
 
   #hot {
@@ -481,6 +490,17 @@ form {
     right:0px;
     top: 20px;
     transform: rotate(-15deg);
+  }
+
+  .post-c-container .post-main .post-title {
+    text-align: justify;
+    font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .searches {
+    flex-direction: column;
   }
 }
 
