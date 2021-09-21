@@ -25,7 +25,7 @@ export default function Post({ post }) {
 
 
     const imageOrVideo = (source) => {
-        if (source.secure_media) {
+        if (source.secure_media && source.secure_media.reddit_video) {
             return <video controls='controls' id='post-video' width='320' height='240' autoPlay='true' loop='true' type='video/mp4' src={post.data.secure_media.reddit_video.fallback_url}></video>;
         } else if (source.url_overridden_by_dest && source.url_overridden_by_dest.includes('.jpg') ) {
             return <img id='post-image' alt='preview' height='auto' width='50%' src={source.url_overridden_by_dest}></img> 
