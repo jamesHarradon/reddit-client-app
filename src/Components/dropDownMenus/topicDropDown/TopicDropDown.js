@@ -26,18 +26,22 @@ function TopicDropDown () {
         
             <select onChange={onChangeHandler} id='topic-select' data-testid='topic-select' name='topic'>
                 
-                    <option value='defaultValue'>Topic - No Selection</option>  
-                    <option value='Nonononoyes'>Nonononoyes</option>
-                    <option value='NetflixEvents'>NetflixEvents</option>
+                <option value='defaultValue'>Search Subreddits</option>  
+                    <option value='AskReddit'>AskReddit</option>
+                    <option value='funny'>Funny</option>
+                    <option value='worldnews'>World News</option>
                     <option value='Instant_regret'>Instant_regret</option>
-                    <option value='TheHolidays'>TheHolidays</option>
+                    <option value='gaming'>Gaming</option>
                     <option value='Futurology'>Futurology</option>
-                    <option value='NatureIsFuckingLit'>NatureIsFuckingLit</option>
+                    <option value='Music'>Music</option>
                     <option value='Gifs'>Gifs</option>
+                    <option value='food'>Food</option>
                     <option value='PhotoshopBattles'>PhotoshopBattles</option>
                     <option value='MemeEconomy'>MemeEconomy</option>
                     <option value='askscience'>askscience</option>
                     <option value='Books'>Books</option>
+                    <option value='movies'>Movies</option>
+                    <option value='Showerthoughts'>Shower Thoughts</option>
                 
             </select> 
         

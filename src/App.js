@@ -11,7 +11,7 @@ import TopicDropDown from './Components/dropDownMenus/topicDropDown/TopicDropDow
 import Comments from './Features/comments/Comments';
 import logo from '../src/images/reddit-logo.png';
 import logoText from '../src/images/reddit-text.png';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 
 function App() {
@@ -28,9 +28,10 @@ function App() {
       <div className="App">
         <div className='topbar'>
           <div className='app-name'>
-            <img id='logo' src={logo} alt='reddit logo'/><br></br>
+            <Link className='link' to='/'><img id='logo' src={logo} alt='reddit logo'/><br></br>
             <img id='reddit-text' src={logoText} alt='reddit text' />
             <h1>Relaxed</h1>
+            </Link>
           </div>
           <div className='searches'>
             <SearchBar onChangeHandler={onChangeHandler} input={input} />

@@ -23,14 +23,16 @@ export default function Post({ post }) {
 
     let imgArr = [redOne, redTwo, redThree, redFour, redFive, redSix, redSeven, redEight];
 
+    let thumbnailText = ['self', 'default', 'spoiler'];
 
     const imageOrVideo = (source) => {
         if (source.secure_media && source.secure_media.reddit_video) {
-            return <video controls='controls' id='post-video' width='320' height='240' autoPlay='true' loop='true' type='video/mp4' src={post.data.secure_media.reddit_video.fallback_url}></video>;
+            return <video controls='controls' id='post-video' width='320' height='240' autoPlay={true} loop={true} type='video/mp4' src={post.data.secure_media.reddit_video.fallback_url}></video>;
         } else if (source.url_overridden_by_dest && source.url_overridden_by_dest.includes('.jpg') ) {
-            return <img id='post-image' alt='preview' height='auto' width='50%' src={source.url_overridden_by_dest}></img> 
-        } else if (source.thumbnail) {
-            return <img id='post-image' alt='preview' height='auto' width='auto' src={source.thumbnail}></img> 
+            return <img id='post-image' alt='preview' height='auto' width='60%' src={source.url_overridden_by_dest}></img> 
+    
+        } else if (source.thumbnail && !thumbnailText.includes(source.thumbnail))  {
+            return <img id='post-image' alt='preview a' height='auto' width='60%' src={source.thumbnail}></img> 
         } else {
             return <img id='post-image' alt='preview' height='200' width='200' src={randomImage(imgArr)}></img> 
         }
